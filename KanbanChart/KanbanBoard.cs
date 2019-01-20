@@ -25,10 +25,6 @@ namespace DevExpress.XtraGrid.Demos
         public KanbanBoard()
         {
             InitializeComponent();
-            InitData();
-            tileView.OptionsEditForm.CustomEditFormLayout = new KanbanEditControl(tileView, employeesData, membersData, checklistData);
-            checkBadge = KanbanHelper.CreateCheckBadge(Color.Gray);
-            checkBadgeDone = KanbanHelper.CreateCheckBadge(GetLabelColor(TaskLabel.Green));
         }
 
         void InitData()
@@ -37,7 +33,7 @@ namespace DevExpress.XtraGrid.Demos
             employeesData = KanbanHelper.LoadEmployees();
             membersData = KanbanHelper.LoadMembers();
             checklistData = KanbanHelper.LoadChecklist();
-            KanbanHelper.ProcessMembersPhoto(employeesData);
+          //  KanbanHelper.ProcessMembersPhoto(employeesData);
             gridControl.DataSource = tasksData;
         }
 
@@ -129,13 +125,13 @@ namespace DevExpress.XtraGrid.Demos
         {
             var memberRows = membersData.Select("TaskID = " + taskId);
             var result = new List<TileViewItemElement>();
-            foreach (var memberRow in memberRows)
-            {
-                var photoBytes = employeesData.Rows.Find(memberRow["MemberID"])["Photo"];
-                var element = new TileViewItemElement();
-                element.Image = ByteImageConverter.FromByteArray(photoBytes as byte[]);
-                result.Add(element);
-            }
+            //foreach (var memberRow in memberRows)
+            //{
+            //    var photoBytes = employeesData.Rows.Find(memberRow["MemberID"])["Photo"];
+            //    var element = new TileViewItemElement();
+            //    element.Image = ByteImageConverter.FromByteArray(photoBytes as byte[]);
+            //    result.Add(element);
+            //}
             return result;
         }
         Color GetLabelColor(TaskLabel label)
@@ -171,5 +167,17 @@ namespace DevExpress.XtraGrid.Demos
 
         void AddEmptyItem(TaskStatus status) { KanbanHelper.AddEmptyItem(tasksData, status); }
         void RemoveEmptyItem(TaskStatus status) { KanbanHelper.RemoveEmptyItem(tasksData, status); }
+
+        private void KanbanBoard_Load(object sender, EventArgs e)
+        {
+            if (DesignMode)
+            {
+                return;
+            }
+            InitData();
+            tileView.OptionsEditForm.CustomEditFormLayout = new KanbanEditControl(tileView, employeesData, membersData, checklistData);
+           // checkBadge = KanbanHelper.CreateCheckBadge(Color.Gray);
+            //checkBadgeDone = KanbanHelper.CreateCheckBadge(GetLabelColor(TaskLabel.Green));
+        }
     }
 }

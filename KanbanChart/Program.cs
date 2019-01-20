@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraGrid.Demos;
 
 namespace KanbanChart
 {
@@ -14,9 +15,11 @@ namespace KanbanChart
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+           Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+           Application.Run(new WF());
+           //var f = new WF();
+           //f.Show();
         }
     }
 }

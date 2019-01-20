@@ -78,7 +78,7 @@
             this.gridControl.Location = new System.Drawing.Point(0, 0);
             this.gridControl.MainView = this.tileView;
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(784, 432);
+            this.gridControl.Size = new System.Drawing.Size(577, 421);
             this.gridControl.TabIndex = 0;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView});
@@ -190,6 +190,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gridControl);
             this.Name = "KanbanBoard";
+            this.Size = new System.Drawing.Size(577, 421);
+            this.Load += new System.EventHandler(this.KanbanBoard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileView)).EndInit();
             this.ResumeLayout(false);

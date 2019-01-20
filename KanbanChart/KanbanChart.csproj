@@ -42,6 +42,8 @@
     <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,11 +76,17 @@
     <Compile Include="UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
+    <Compile Include="WF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WF.Designer.cs">
+      <DependentUpon>WF.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="KanbanBoard.resx">
       <DependentUpon>KanbanBoard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KanbanEditControl.resx" >
-        <DependentUpon>KanbanEditControl.cs</DependentUpon>
+    <EmbeddedResource Include="KanbanEditControl.resx">
+      <DependentUpon>KanbanEditControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -93,6 +101,9 @@
     <EmbeddedResource Include="UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WF.resx">
+      <DependentUpon>WF.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -105,6 +116,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\KanbanModuleData\KanbanChecklist.xml" />
+    <Content Include="Data\KanbanModuleData\KanbanMembers.xml" />
+    <Content Include="Data\KanbanModuleData\KanbanTasks.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
