@@ -52,7 +52,7 @@ namespace DevExpress.XtraGrid.Demos {
         public static DataTable LoadEmployees() { 
             string DBFileName = string.Empty;
             string connectionString = string.Empty;
-            DBFileName = FilesHelper.FindingFileName(Application.StartupPath, "Data\\nwind.mdb");
+            DBFileName = FilesHelper.FindingFileName(Application.StartupPath, "Data\\KanbanModuleData\\nwind.mdb");
             if(String.IsNullOrEmpty(DBFileName))
                 return null;
             connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + DBFileName;

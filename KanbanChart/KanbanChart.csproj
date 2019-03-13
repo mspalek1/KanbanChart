@@ -121,6 +121,9 @@
     <Content Include="Data\KanbanModuleData\KanbanChecklist.xml" />
     <Content Include="Data\KanbanModuleData\KanbanMembers.xml" />
     <Content Include="Data\KanbanModuleData\KanbanTasks.xml" />
+    <Content Include="Data\KanbanModuleData\nwind.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
